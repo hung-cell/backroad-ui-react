@@ -1,5 +1,6 @@
 import aboutImage from '../images/about.jpeg'
 import Title from './Title'
+
 const About = () => {
   return (
     <section className='section' id='about'>
@@ -20,9 +21,9 @@ const About = () => {
             quisquam harum nam cumque temporibus explicabo dolorum sapiente odio
             unde dolor?
           </p>
-          <a href='#' className='btn'>
+          <button type='button' className='btn'>
             read more
-          </a>
+          </button>
         </article>
       </div>
     </section>

@@ -1,6 +1,13 @@
 import logo from '../images/logo.svg'
 import pageLinks, { socialLinks } from '../data'
+
 const NavBar = () => {
+  const scrollToSection = (e, href) => {
+    e.preventDefault()
+    const element = document.getElementById(href.replace('#', ''))
+    element?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <nav className='navbar'>
       <div className='nav-center'>
@@ -14,10 +21,12 @@ const NavBar = () => {
           {pageLinks.map((link) => {
             return (
               <li key={link.id}>
-                <a href={link.href} className='nav-link'>
-                  {' '}
-                  {link.text}{' '}
-                </a>
+                <button
+                  onClick={(e) => scrollToSection(e, link.href)}
+                  className='nav-link'
+                >
+                  {link.text}
+                </button>
               </li>
             )
           })}

@@ -1,15 +1,25 @@
 import pageLinks from '../data'
 import { socialLinks } from '../data'
+
 const Footer = () => {
+  const scrollToSection = (e, href) => {
+    e.preventDefault()
+    const element = document.getElementById(href.replace('#', ''))
+    element?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <footer className='section footer'>
       <ul className='footer-links'>
         {pageLinks.map((link) => {
           return (
             <li key={link.id}>
-              <a href={link.href} className='footer-link'>
+              <button
+                onClick={(e) => scrollToSection(e, link.href)}
+                className='footer-link'
+              >
                 {link.text}
-              </a>
+              </button>
             </li>
           )
         })}
@@ -17,7 +27,7 @@ const Footer = () => {
       <ul className='footer-icons'>
         {socialLinks.map((link) => {
           return (
-            <li>
+            <li key={link.id}>
               <a
                 href={link.href}
                 target='_blank'

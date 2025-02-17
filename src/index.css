@@ -198,11 +198,13 @@ Hero
   font-size: 1.25rem;
   background: var(--clr-white);
   color: var(--clr-primary-5);
+  border: none;
+  cursor: pointer;
 }
 .hero-btn:hover {
   background: transparent;
   color: var(--clr-white);
-  border-color: var(--clr-white);
+  border: 1px solid var(--clr-white);
 }
 @media screen and (min-width: 768px) {
   .hero {
